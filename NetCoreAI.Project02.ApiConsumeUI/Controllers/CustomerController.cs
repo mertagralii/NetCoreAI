@@ -36,7 +36,7 @@ namespace NetCoreAI.Project02.ApiConsumeUI.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateCustomer(CreateCustomerDto createCustomerDto) 
         {
-            var client = _httpClientFactory.CreateClient();
+            var client = _httpClientFactory.CreateClient();// Client oluşturduk (İstemci oluşturduk).
             var jsonData = JsonConvert.SerializeObject(createCustomerDto); // Gelen String ifadeyi Json'a çevirdik.
             var content = new StringContent(jsonData, Encoding.UTF8, "application/json"); // Json verisini StringContent'e çevirdik.StirngContent(Gönderilecek Json türü,Encoding.UTF8 ==> Türkçe karakter olabilir buna göre yap, gönderdiğim türün formatı)
             var responseMessage = await client.PostAsync("https://localhost:7180/api/Customers/CreateCustomers", content); // PostAsync metodu ile bir adrese istekde bulunduk ve içerik olarak content'i gönderdik.
@@ -49,7 +49,7 @@ namespace NetCoreAI.Project02.ApiConsumeUI.Controllers
         
         public async Task<IActionResult> DeleteCustomer(int Id) 
         {
-            var client = _httpClientFactory.CreateClient();
+            var client = _httpClientFactory.CreateClient();// Client oluşturduk (İstemci oluşturduk).
             var responseMessage = await client.DeleteAsync($"https://localhost:7180/api/Customers/DeleteCustomers/{Id}"); // DeleteAsync metodu ile bir adrese istekde bulunduk ve içerik olarak content'i gönderdik.
             if (responseMessage.IsSuccessStatusCode)
             {
@@ -60,7 +60,7 @@ namespace NetCoreAI.Project02.ApiConsumeUI.Controllers
         [HttpGet]
         public async Task<IActionResult> UpdateCustomer(int id)
         {
-            var client = _httpClientFactory.CreateClient();
+            var client = _httpClientFactory.CreateClient();// Client oluşturduk (İstemci oluşturduk).
             var responseMessage = await client.GetAsync("https://localhost:7180/api/Customers/GetCustomer?Id=" + id); // APİ'deki girilen Id'ye göre veri getiren APİ'ye istek attık.
             if (responseMessage.IsSuccessStatusCode) // Eğer başarılı bir şekilde dönerse (200 Kodu Dönerse)
             {
@@ -73,7 +73,7 @@ namespace NetCoreAI.Project02.ApiConsumeUI.Controllers
         [HttpPost]
         public async Task<IActionResult> UpdateCustomer(GetByIdCustomerDto getByIdCustomerDto) 
         {
-            var client = _httpClientFactory.CreateClient();
+            var client = _httpClientFactory.CreateClient();// Client oluşturduk (İstemci oluşturduk).
             var jsonData = JsonConvert.SerializeObject(getByIdCustomerDto); // Gelen String ifadeyi Json'a çevirdik.
             var content = new StringContent(jsonData, Encoding.UTF8, "application/json"); // Json verisini StringContent'e çevirdik.StirngContent(Gönderilecek Json türü,Encoding.UTF8 ==> Türkçe karakter olabilir buna göre yap, gönderdiğim türün formatı)
             var responseMessage = await client.PutAsync("https://localhost:7180/api/Customers/UpdateCustomers", content); // PutAsync metodu ile bir adrese istekde bulunduk ve içerik olarak content'i gönderdik.

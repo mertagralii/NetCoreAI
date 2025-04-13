@@ -350,6 +350,16 @@ public async Task<IActionResult> DeleteCustomer(int Id)
 
 Bu şekilde projemizde API'leri kullanarak müşteri CRUD işlemlerini gerçekleştirebiliriz.
 
+# NetCoreIA.Project03.RapidApi
+
+Bu solition'u da çeşitlilik olması bakımından Console uygulaması üzerinden açtık
+
+Bu projede ise dışardan bir APİ'yi nasıl tüketebileceğimizi göstereceğiz.
+
+Kullandığımız site Linki : https://rapidapi.com/hub
+ 
+
+
 
 
 

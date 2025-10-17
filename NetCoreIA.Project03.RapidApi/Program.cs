@@ -27,7 +27,6 @@ using (var response = await client.SendAsync(request)) // Requesti gönderiyoruz
 
     foreach (var series in apiSeriesViewModels) // ApiSeriesViewModel listesini dönüyoruz.
     {
-        Console.WriteLine(series.rank +" - " +series.title + " Film Puanı : " + series.rating + " Yapım Yılı : " + series.year); // Verileri yazdırıyoruz.
+        Console.WriteLine(series.rank + " - " + series.title + " Film Puanı : " + series.rating + " Yapım Yılı : " + series.year); // Verileri yazdırıyoruz.
     }
-    
 }

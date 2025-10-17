@@ -350,6 +350,74 @@ public async Task<IActionResult> DeleteCustomer(int Id)
 
 Bu şekilde projemizde API'leri kullanarak müşteri CRUD işlemlerini gerçekleştirebiliriz.
 
+# NetCoreIA.Project03.RapidApi
+
+Bu solition'u da çeşitlilik olması bakımından Console uygulaması üzerinden açtık
+
+Bu projede ise dışardan bir APİ'yi nasıl tüketebileceğimizi göstereceğiz.
+
+Kullandığımız site Linki : https://rapidapi.com/hub
+
+# RapidAPI ile API Entegrasyonu - Örnek Rehber
+
+Bu rehber, RapidAPI'den alınan bir API örneğini projenize nasıl entegre edeceğinizi adım adım açıklar. Açıklamalar Türkçe ve pratik adımlarla hazırlanmıştır.
+
+## Örnek API
+Kullandığımız örnek API:  
+https://rapidapi.com/rapidapi-org1-rapidapi-org-default/api/imdb236/playground/apiendpoint_610f70ea-3ac7-4fa3-a3d5-2ee6af9c884b
+
+## Adım 1 — RapidAPI'de Code Snippets (Kod Örnekleri)
+1. API sayfasını açın.
+2. Sağ tarafta bulunan "Code Snippets" bölümünden kullanacağınız istemci türünü (Client) ve dili seçin (örn. C#, JavaScript, Python).
+3. Seçime göre RapidAPI size kullanmanız için hazır kodu verecektir. Bu kodu projenize kopyalayarak başlayabilirsiniz.
+
+NOT: RapidAPI snippet'leri genelde gerekli header (RapidAPI-Key vb.), endpoint URL ve örnek istek/yanıt yapısını içerir.
+
+## Adım 2 — Projeye Entegrasyon
+1. RapidAPI tarafından verilen kodu projenizde uygun bir servis sınıfına yapıştırın (örn. ApiService veya ImdbApiClient).
+2. Gerekli paketleri ve konfigürasyonları (HttpClient, authentication header vs.) ekleyin.
+3. İlk denemede küçük bir istek atıp cevap döndüğünden emin olun.
+
+## Adım 3 — ViewModel / Model Oluşturma
+API'den gelen JSON yapısı ile projenizdeki sınıflar (ViewModel veya DTO) birebir uyumlu olmalıdır.
+
+Örnek API sınıf yapısı ve bizim projedeki karşılığı:
+
+API (örnek)
+- Id
+- Title
+- Name
+- Surname
+
+Projedeki ViewModel
+- Id -> Id
+- Title -> Title
+- Name -> Name
+- Surname -> Surname
+
+Bu alanları elle yazmak yerine JSON'ı kopyalayıp 'özel yapıştır' (Paste Special) ile doğrudan sınıfa çevirebilirsiniz (IDE destekliyorsa).
+
+### Visual Studio (örnek) — "Paste Special" kullanımı
+1. API'den aldığınız örnek JSON'u kopyalayın.
+2. Visual Studio'da yeni bir sınıf dosyası (.cs) oluşturun.
+3. Sınıf dosyasının içindeyken Menü > Edit > Paste Special > Paste JSON as Classes seçeneğini kullanın.
+4. Visual Studio otomatik olarak JSON alanlarına göre C# sınıfları oluşturur (property tipleriyle beraber).
+
+NOT: Diğer IDE'lerde veya dillerde benzer eklentiler / araçlar olabilir (ör. json2ts, quicktype.io, vs).
+
+## Adım 4 — Model ile API Yanıtını Eşleme
+Servisiniz API'den gelen JSON'u deserialize ederek (örn. Newtonsoft.Json, System.Text.Json) oluşturduğunuz ViewModel/DTO tipine dönüştürmeli.
+
+Örnek (C# pseudocode):
+```csharp
+var json = await httpClient.GetStringAsync(url);
+var result = JsonConvert.DeserializeObject<MyViewModel>(json);
+```
+
+
+ 
+
+
 
 
 

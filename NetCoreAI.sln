@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreIA.Project03.RapidAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreIA.Project04.OpenAIChat", "NetCoreIA.Project04.OpenAIChat\NetCoreIA.Project04.OpenAIChat.csproj", "{6FA702B0-29F9-472B-9D42-67B2D1CBF6D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreAI.Project05.OpenWhisperAudioTranskript", "NetCoreAI.Project05.OpenWhisperAudioTranskript\NetCoreAI.Project05.OpenWhisperAudioTranskript.csproj", "{C4C7A01E-9520-4E2E-A4ED-411F1B0A50A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{6FA702B0-29F9-472B-9D42-67B2D1CBF6D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6FA702B0-29F9-472B-9D42-67B2D1CBF6D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6FA702B0-29F9-472B-9D42-67B2D1CBF6D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4C7A01E-9520-4E2E-A4ED-411F1B0A50A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4C7A01E-9520-4E2E-A4ED-411F1B0A50A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4C7A01E-9520-4E2E-A4ED-411F1B0A50A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4C7A01E-9520-4E2E-A4ED-411F1B0A50A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

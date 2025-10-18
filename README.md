@@ -487,6 +487,16 @@ class Program
 
 OpenAI'ın yapay zekasının Whisper Modelini entegre etmek için ilk önce aşağıdaki linke gidiyoruz. (Açılmazsa kayıt ol)
 
+Döküman Linki : https://platform.openai.com/docs/overview
+
+Ardından buradan kendimize bir APIKEY tanımlıyoruz
+
+Anahtar oluşturma yeri : https://platform.openai.com/api-keys
+
+Diğer Yardımcı Linkler : 
+
+Ana Sayfa : https://platform.openai.com/usage
+Ödeme yeri : https://platform.openai.com/settings/organization/billing/overview
 
 NOT: OpenAI'in  Whisper Modelini api ile entegrasyon yapmak ve kullanabilmek için ücret ödemesi yapman gerekiyor.
 
@@ -529,7 +539,57 @@ class Program
                 Console.WriteLine(await response.Content.ReadAsStringAsync()); // Hata detaylarını yazdır (loglama/inceleme için)
             }
         }
+    }
+}
+```
 
+# NetCoreAI.Project06.DallEImageGeneration
+
+OpenAI'ın yapay zekasının Dall-E Modelini entegre etmek için ilk önce aşağıdaki linke gidiyoruz. (Açılmazsa kayıt ol)
+
+Döküman Linki : https://platform.openai.com/docs/overview
+
+Ardından buradan kendimize bir APIKEY tanımlıyoruz
+
+Anahtar oluşturma yeri : https://platform.openai.com/api-keys
+
+Diğer Yardımcı Linkler : 
+
+Ana Sayfa : https://platform.openai.com/usage
+Ödeme yeri : https://platform.openai.com/settings/organization/billing/overview
+
+NOT: OpenAI'in  Dall-E Modelini api ile entegrasyon yapmak ve kullanabilmek için ücret ödemesi yapman gerekiyor.
+
+Kod Kısmı :
+
+```csharp
+
+using System.Text;
+using Newtonsoft.Json;
+
+class Program
+{
+    public static async Task Main(string[] args)
+    {
+        // Bu proje bizim girdiğimiz komutları kullanarak DALL·E API'si üzerinden resim oluşturacak.
+        string apiKey = "Api Anahtarı Buraya Gelecek";  // OpenAI API anahtarınızı buraya ekleyin.
+        Console.WriteLine("Example DALL·E Image Generation using .NET Core AI"); // Proje başlığı
+        string promt = Console.ReadLine(); // Kullanıcıdan resim oluşturmak için bir komut alıyoruz.
+        using (var client = new HttpClient()) // HttpClient nesnesi oluşturuyoruz.
+        {
+            client.DefaultRequestHeaders.Add("Authorization",$"Bearer {apiKey}"); // Yetkilendirme başlığı ekliyoruz.
+            var requestBody = new // İstek gövdesi oluşturuyoruz.
+            {
+                prompt = promt, // Kullanıcının girdiği komut
+                n = 1, // Oluşturulacak resim sayısı
+                size = "1024x1024" // Resim boyutu
+            };
+            string jsonBody = JsonConvert.SerializeObject(requestBody); // İstek gövdesini JSON formatına dönüştürüyoruz.
+            var content = new StringContent(jsonBody, Encoding.UTF8, "application/json"); // İçerik türünü belirtiyoruz.
+            HttpResponseMessage response = await client.PostAsync($"http://api.openai.com/v1/images/generations", content); // POST isteği gönderiyoruz.
+            string responseString = await response.Content.ReadAsStringAsync(); // Yanıtı okuyoruz.
+            Console.WriteLine(responseString); // Burada gelen yanıt bize bir resim URL'si verecek. Bu url üzerinden resmi görüntüleyebiliriz.
+        }
     }
 }
 ```

@@ -8,7 +8,7 @@ class Program
         string apiKey = "Api Key Buraya gelecek"; // OpenAI'dan alınan secret key (gerçek projide ortam değişkeni kullanın)
         var audioPathFile = "audio1.mp3"; // İşlenecek ses dosyasının yolu veya adı
 
-        using (var client = new HttpClient()) // HttpClient örneği oluştur (IDisposable, using ile kapatılır)
+        using (var client = new HttpClient()) // HttpClient örneği oluştur (IDisposable, using ile kapatılır) 
         {
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey); // Bearer token ile yetkilendir
 

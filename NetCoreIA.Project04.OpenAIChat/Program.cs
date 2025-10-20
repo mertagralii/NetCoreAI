@@ -5,6 +5,7 @@ class Program
 {
     static async Task Main(string[] args)
     {
+        // Bu proje OpenAI ChatGPT API'sini kullanarak kullanıcıdan aldığı soruya cevap verecek.
         // Döküman Linki : https://platform.openai.com/docs/overview
         // Apikey' i kullanabilmek için ödeme yapılması gerekiyor. Gerekli Linkleri aşağıda : 
         // Ana Sayfa : https://platform.openai.com/usage

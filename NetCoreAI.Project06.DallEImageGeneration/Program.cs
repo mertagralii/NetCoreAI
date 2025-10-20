@@ -6,7 +6,7 @@ class Program
 {
     public static async Task Main(string[] args)
     {
-        // Bu proje bizim girdiğimiz komutları kullanarak DALL·E API'si üzerinden resim oluşturacak.
+        // Bu proje bizim girdiğimiz promtları uygulayarak DALL·E API'si üzerinden resim oluşturacak.
         string apiKey = "Api Anahtarı Buraya Gelecek";  // OpenAI API anahtarınızı buraya ekleyin.
         Console.WriteLine("Example DALL·E Image Generation using .NET Core AI"); // Proje başlığı
         string promt = Console.ReadLine(); // Kullanıcıdan resim oluşturmak için bir komut alıyoruz.

@@ -4,6 +4,7 @@ class Program
 {
     static async Task Main(string[] args)
     {
+        // Bu proje OpenAI Whisper API'sini kullanarak bir ses dosyasını metne dönüştürecek (transkript).
         // Proje notu: çalıştırmadan önce `audio1.mp3` dosyasının build çıktısına kopyalandığından ve `apiKey` değerinin güvenli şekilde sağlandığından emin olun.
         string apiKey = "Api Key Buraya gelecek"; // OpenAI'dan alınan secret key (gerçek projide ortam değişkeni kullanın)
         var audioPathFile = "audio1.mp3"; // İşlenecek ses dosyasının yolu veya adı

@@ -1,7 +1,7 @@
 ﻿using NetCoreIA.Project03.RapidApi.ViewModels;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
-
+// Bu proje RapidApi üzerinden IMDB Top 100 Movies API'sini kullanarak film verilerini çekecek ve ekrana yazdıracak.
 var client = new HttpClient(); 
 
 List<ApiSeriesViewModel> apiSeriesViewModels = new List<ApiSeriesViewModel>(); 
